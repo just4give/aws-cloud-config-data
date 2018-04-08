@@ -1,0 +1,32 @@
+server:
+  port: 8081
+  
+spring:
+  application:
+    name: lov-service
+  profiles:
+    active: default
+---
+spring:
+  profiles: default
+          
+eureka:
+  instance:
+      leaseRenewalIntervalInSeconds: 30
+      leaseExpirationDurationInSeconds: 90
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+---
+spring:
+  profiles: aws
+server:
+  port: 5000          
+eureka:
+  instance:
+      leaseRenewalIntervalInSeconds: 30
+      leaseExpirationDurationInSeconds: 90
+      preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: http://registry.ereg3.com/eureka/           
