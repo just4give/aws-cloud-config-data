@@ -1,0 +1,38 @@
+server:
+  port: 8081
+  
+spring:
+  application:
+    name: lov-service
+  profiles:
+    active: default
+---
+spring:
+  profiles: default
+          
+eureka:
+  instance:
+      leaseRenewalIntervalInSeconds: 30
+      leaseExpirationDurationInSeconds: 90
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+app:
+  message: '{cipher}AgBL/x4LY3YY6r1SYv9cUAq4mZVBrUhPqIcieKx6bPxtTHCf8LALxV14N1+6U0FemJg9aHgU4pQcQHHf7Z96Z8EOyF4vxlVBztyZyEWi5LZWtdjoZ83e5gtCze7XZb2JgP7xlGGdPc2dhjzNvn2119KseRxgHTSL2Z3WofwL6DGXyBmtXG9MVCMHpKySIUv8p1RCpeAhMkfTnbCrpkvC6YkUlgfic83Z2BU/A5pw7mArhUEw7fzEwD4ACqgwCYuJpT3drXTVBonZxVK8lfT2qdy4vmcpxoVyo/+zdr4ue0T6+naAQhHUqIncVh2r0GMtnmnuwbBfBvkKM61unPV49qelqYO+LJtehm+FRLEcNoRgEmretn64DZSAuYxCp3q6S3L/AyMH8wV6J9OyFRE6g2yhbRFcrmGtzPpqj3eWDo+WI3gla3oPfeuBXZCJV9a0aGwcmFqgLIHZS6aR99PzzJzNsCztBKoE3qx3ger9CC7OUxWvt36QqcaLorse/+GOCmtF+zF6kcVARk82ccgJmg3321AhOSPOYphAEA+mfxY3bcQSj5oeSDfQ7u2BF6rIf6T4h19BEYfCMhXNUuZuvlGrRPtwYCyLU3jGguSHoi/RLbdfFUANR5dcaWU4GoSH6Ry9PmmHCnoCL+IlFL62yET/1KPNtjPcuzj3cSSeiXRQKruWgqoLNFMZJjPupGrWsSXPGBo0iIRqCVQB2mXfO++F'
+      
+---
+spring:
+  profiles: aws
+server:
+  port: 5000          
+eureka:
+  instance:
+      leaseRenewalIntervalInSeconds: 30
+      leaseExpirationDurationInSeconds: 90
+      preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: http://registry.ereg3.com/eureka/  
+app:
+  message: '{cipher}AgBBU6f1kmHZV6M2P1TlyKiFMxEMtF7gtPXdHbUeN0l8rWGz22MBWBEp9hw8b6f01XMdBIvkZs6QULmvCfxCT70KIV/xwIDlTjLyEZkRlyKCciUI2eqsyhQog3VGEEqdyzc1EiIcGpJReK7xMF37oSO04oJ/a+OvERi/JKkJjbiOszwTTz3HI90EY7QnUuJ8ct8TlgYO7EvXwL1swzDQncxNI7wPl9jBFm1H4jaTe0S5KXv7NT0iIo8KJro3eUmCxhsMSC1kFadclKJMx98FtnQQmgtuHwbkTbKUb96fG6jDgPjV2L9/fuklex/GRxcHValWwTr9lii33ppCwANsqY0MP4RfRzTSwGwRHrNoPajTqNq/eF98ROSL7/uFeAY0OK/P8gburufR9Uiv/k4AH4fZpXlyCEKoZWDNJDsjHGvDFoymEA7zGb5g1edgBxkJd370uEjHHLYGMoj1FWGhTfMSOp7DMNZFyGj/ra8rPMwFPqEa6FSleRTnmr/gOiwHeQp0dMKLB9U+xvs6Ob+PPEpkEaPmPSNZ7BRn55FiDf9fVbWJ620I1h9pbjMFyQk6vKE7scULR5ucwJwP5duuAUF4mh/wsYgaS6tayqMYBMHJx34eRRSeeRR4AL72/DhJnhCIM5cTbOi16xwhF1rWG+kpFPqsi2DxXqHVJ+S2C4gR5buskkUloiM3nEl2lS93ejINrKKfON6pmMZxDtt8Ms3a'
+                 
